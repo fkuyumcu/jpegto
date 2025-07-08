@@ -1,2 +1,17 @@
-# jpegto
-This script fixes the incorrect display orientation of .jpg images by modifying their Exif Orientation metadata. Without altering the pixel data, it updates the orientation flag to simulate a 90-degree clockwise rotation, ensuring correct display across image viewers and browsers.
+# JPG Metadata Rotation Tool (macOS)
+
+This simple macOS-compatible script updates the **Exif orientation metadata** of `.jpg` images to simulate a **90° clockwise rotation** — without modifying the actual image pixels.
+
+### ✅ What it does:
+- Edits the `Orientation` tag in the Exif metadata
+- Ensures images display correctly in browsers and image viewers
+- Works **only on macOS** using `exiftool`
+
+### 📦 Requirements:
+- macOS
+- `exiftool` installed (`brew install exiftool`)
+
+### 🔧 Usage:
+```bash
+cd path/to/your/jpg/folder
+exiftool -Orientation=6 -n -overwrite_original *.jpg
